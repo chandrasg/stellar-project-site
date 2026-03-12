@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STELLAR — Digital Twins for Mental Health Training</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --ink: #1A1A1A;
+    --ink-light: #555;
+    --ink-muted: #888;
+    --accent: #2D5A3D;
+    --accent-light: #3A7A52;
+    --accent-bg: #E8F0EB;
+    --accent-bg2: #D4E4DA;
+    --warm: #C4956A;
+    --warm-bg: #FDF6F0;
+    --border: #E0DED8;
+    --border-light: #EDEBE6;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250, 250, 247, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0 2rem;
+  }
+  nav .nav-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  nav .logo {
+    font-family: var(--font-mono);
+    font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  nav .nav-links { display: flex; gap: 2rem; }
+  nav .nav-links a {
+    font-size: 0.82rem; font-weight: 500;
+    color: var(--ink-light);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  nav .nav-links a:hover { color: var(--accent); }
+
+  /* ---- HERO ---- */
+  .hero {
+    padding: 10rem 2rem 5rem;
+    max-width: 1120px; margin: 0 auto;
+    position: relative;
+  }
+  .hero .funder-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-bg);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    line-height: 1.15;
+    font-weight: 400;
+    max-width: 800px;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero .acronym-expand {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .hero .lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--ink-light);
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .hero .institutions {
+    display: flex; gap: 2rem; align-items: center;
+    flex-wrap: wrap;
+  }
+  .hero .institutions span {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
+  }
+  .hero .institutions .divider {
+    width: 1px; height: 20px; background: var(--border);
+  }
+
+  /* ---- SECTION LAYOUT ---- */
+  section {
+    padding: 5rem 2rem;
+    max-width: 1120px; margin: 0 auto;
+  }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  section h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+  section p {
+    color: var(--ink-light);
+    max-width: 680px;
+    font-weight: 300;
+  }
+
+  /* ---- ABOUT ---- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2.5rem;
+  }
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: box-shadow 0.3s;
+  }
+  .about-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  }
+  .about-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+  .about-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .about-card .card-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  /* ---- TEAM ---- */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .team-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .team-card:hover {
+    border-color: var(--accent-bg2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .team-card .role-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm);
+    background: var(--warm-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+  .team-card .role-tag.pi {
+    color: var(--accent);
+    background: var(--accent-bg);
+  }
+  .team-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+  }
+  .team-card .affiliation {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+  }
+  .team-card .bio {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ---- PUBLICATIONS ---- */
+  .pub-list {
+    margin-top: 2rem;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .pub-item {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .pub-item:hover {
+    border-color: var(--accent-bg2);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  }
+  .pub-year {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: var(--accent-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 0.2rem;
+  }
+  .pub-content h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+    color: var(--ink);
+  }
+  .pub-content .authors {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .pub-content .venue {
+    font-size: 0.78rem;
+    color: var(--accent-light);
+    font-weight: 500;
+    margin-top: 0.3rem;
+  }
+  .pub-content a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+    display: inline-block;
+  }
+  .pub-content a:hover { text-decoration: underline; }
+
+  /* ---- POSITIONS ---- */
+  .positions-section {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 16px;
+    padding: 3.5rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .positions-section::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .positions-section::after {
+    content: '';
+    position: absolute; bottom: -40px; left: 30%;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .positions-section .section-label { color: rgba(255,255,255,0.6); }
+  .positions-section h2 { color: #fff; }
+  .positions-section p { color: rgba(255,255,255,0.8); }
+  .position-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .position-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+    transition: background 0.3s;
+  }
+  .position-card:hover {
+    background: rgba(255,255,255,0.15);
+  }
+  .position-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.35rem;
+  }
+  .position-card .loc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .position-card p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    max-width: none;
+  }
+  .contact-line {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    position: relative;
+    z-index: 1;
+  }
+  .contact-line a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    max-width: 1120px; margin: 0 auto;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .footer-left {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    font-weight: 300;
+  }
+  footer .footer-right {
+    display: flex; gap: 1.5rem;
+  }
+  footer .footer-right a {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer .footer-right a:hover { color: var(--accent); }
+
+  /* ---- SEPARATOR ---- */
+  .sep {
+    max-width: 1120px; margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .sep hr {
+    border: none;
+    border-top: 1px solid var(--border-light);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .hero { padding: 8rem 1.5rem 3rem; }
+    section { padding: 3rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .position-cards { grid-template-columns: 1fr; }
+    .positions-section { padding: 2.5rem 1.5rem; }
+    nav .nav-links { gap: 1rem; }
+    nav .nav-links a { font-size: 0.75rem; }
+    .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+  @media (max-width: 480px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .hero .institutions { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .hero .institutions .divider { display: none; }
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero .funder-badge { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  .hero h1 { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+  .hero .acronym-expand { animation: fadeUp 0.6s ease both; animation-delay: 0.3s; }
+  .hero .lead { animation: fadeUp 0.6s ease both; animation-delay: 0.35s; }
+  .hero .institutions { animation: fadeUp 0.6s ease both; animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">STELLAR</a>
+    <div class="nav-links">
+      <a href="#about">Research</a>
+      <a href="#team">Team</a>
+      <a href="#publications">Publications</a>
+      <a href="#positions">Open Positions</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="funder-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
+    Funded by the Wellcome Trust
+  </span>
+  <h1>Digital Twins for <em>Mental Health</em> Clinician Training</h1>
+  <span class="acronym-expand">STELLAR — Steering-Vector Enhanced LLM Agents for Realistic Digital Twins in Mental Health</span>
+  <p class="lead">
+    AI-powered patient simulations using large language models enhanced with Conceptors — advanced steering vectors enabling precise control over psychiatric symptom presentations — for scalable, equitable clinician training worldwide.
+  </p>
+  <div class="institutions">
+    <span>New York University</span>
+    <div class="divider"></div>
+    <span>University of Pennsylvania</span>
+    <div class="divider"></div>
+    <span>Linguistic Data Consortium</span>
+  </div>
+</header>
+
+<div class="sep"><hr></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="section-label">Research</span>
+  <h2>The Problem &amp; Our Approach</h2>
+  <p>Mental health training faces a fundamental bottleneck: trainees need diverse clinical exposure, but access to patients with rare symptom combinations and cultural variations is limited by ethics, logistics, and cost. STELLAR addresses this through controllable digital patient twins.</p>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <span class="card-num">01</span>
+      <h3>Conceptor-Steered Digital Twins</h3>
+      <p>We use Conceptors — a mathematical framework for manipulating internal LLM representations — to create patient simulations with precisely calibrated psychiatric symptoms across anxiety, depression, psychosis, and fear spectra. Unlike prompting, Conceptors enable continuous intensity control and composability via Boolean operations.</p>
+    </div>
+    <div class="about-card">
+      <span class="card-num">02</span>
+      <h3>Philadelphia Neurodevelopmental Cohort</h3>
+      <p>STELLAR leverages the PNC, a community sample of ~10,000 genotyped youth with structured clinical interviews, neurocognitive assessments, and neuroimaging. The recorded clinical interviews provide both ground-truth diagnostic labels and natural language exemplars of symptom expression.</p>
+    </div>
+    <div class="about-card">
+      <span class="card-num">03</span>
+      <h3>Diagnostic Tool Robustness</h3>
+      <p>Controlled digital twins serve as reproducible testbeds for evaluating emerging language-based diagnostic tools before clinical deployment — measuring demographic invariance and identifying bias across sex/gender, age, ethnicity, SES, and language proficiency.</p>
+    </div>
+    <div class="about-card">
+      <span class="card-num">04</span>
+      <h3>Shareability &amp; Global Reach</h3>
+      <p>Once validated, symptom-specific Conceptors can be distributed to other institutions without retraining, accelerating adoption worldwide. All outputs — Conceptor libraries, code, and evaluation frameworks — will be released under open-source licenses.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><hr></div>
+
+<!-- TEAM -->
+<section id="team">
+  <span class="section-label">Team</span>
+  <h2>Investigators &amp; Collaborators</h2>
+  <p>A collaboration uniting machine learning, psychiatry, speech science, and lived experience across NYU, Penn, and the Linguistic Data Consortium.</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <span class="role-tag pi">Lead PI</span>
+      <h3>João Sedoc</h3>
+      <div class="affiliation">New York University</div>
+      <div class="bio">ML researcher with expertise in Conceptor methods for bias mitigation and conversational AI in healthcare. Leads overall project coordination and Conceptor-based steering vector development.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag pi">Lead PI — UPenn &amp; LDC</span>
+      <h3>Neville Ryant</h3>
+      <div class="affiliation">Linguistic Data Consortium</div>
+      <div class="bio">Leads all LDC annotation and assessment — manual transcription, human preference judgments, digital twin evaluation, and quality control across speech and language data.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag pi">Local PI — Penn Medicine</span>
+      <h3>Raquel Gur</h3>
+      <div class="affiliation">University of Pennsylvania</div>
+      <div class="bio">Founder of the Philadelphia Neurodevelopmental Cohort. Provides psychiatric expertise in symptom presentation and maintains connections with lived experience communities.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag pi">Local PI — Penn Engineering</span>
+      <h3>Sharath Chandra Guntuku</h3>
+      <div class="affiliation">University of Pennsylvania</div>
+      <div class="bio">Directs the Computational Social Listening Lab. Leads integration of behavioral and social media-derived patterns into Conceptor development, clinical validation, and technical infrastructure.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag">Co-Investigator</span>
+      <h3>Monica Calkins</h3>
+      <div class="affiliation">University of Pennsylvania</div>
+      <div class="bio">Expert in research program management, psychiatric assessment, and the PNC clinical dataset. Co-implements the Lived Experience Integration Team and leads stakeholder surveys and focus groups.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag">Co-Investigator</span>
+      <h3>Tyler Moore</h3>
+      <div class="affiliation">University of Pennsylvania</div>
+      <div class="bio">Quantitative methodology expert. Establishes psychometric benchmarks for clinical fidelity, develops validation protocols, and optimizes Conceptor composition for realistic multi-dimensional presentations.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag">Co-Investigator</span>
+      <h3>Sunghye Cho</h3>
+      <div class="affiliation">Linguistic Data Consortium</div>
+      <div class="bio">Extracts speech-based digital biomarkers from clinical interview recordings and validates ASR outputs. Leads acoustic-linguistic integration for multimodal Conceptor development.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag">Lived Experience</span>
+      <h3>Rachel Gordon</h3>
+      <div class="affiliation">Filmmaker &amp; Data Scientist</div>
+      <div class="bio">Black filmmaker and former data scientist whose work centers stigma, race, motherhood, and mental health. Co-chairs the Lived Experience Integration Team, bringing deep expertise on barriers to care.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag">Collaborator</span>
+      <h3>Mark Liberman</h3>
+      <div class="affiliation">University of Pennsylvania</div>
+      <div class="bio">Christopher H. Browne Distinguished Professor of Linguistics and founding director of the Linguistic Data Consortium. Research spans phonetics, speech technology, and computational linguistics.</div>
+    </div>
+    <div class="team-card">
+      <span class="role-tag">Collaborator</span>
+      <h3>Ruben Gur</h3>
+      <div class="affiliation">University of Pennsylvania</div>
+      <div class="bio">Director of the Brain Behavior Laboratory and Center for Neuroimaging in Psychiatry. Developed the computerized neurocognitive battery used in the PNC and deep phenotyping tools deployed worldwide.</div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><hr></div>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <span class="section-label">Selected Publications</span>
+  <h2>Foundational Work</h2>
+  <p>Key publications by team members that underpin STELLAR's approach.</p>
+
+  <div class="pub-list">
+    <div class="pub-item">
+      <span class="pub-year">2025</span>
+      <div class="pub-content">
+        <h4>The Philadelphia Neurodevelopmental Cohort: Perspective, Lessons, and Future Directions</h4>
+        <div class="authors">Gur RE, Calkins ME, Gur RC</div>
+        <div class="venue">Schizophrenia Bulletin, 51(4), 852–857</div>
+        <a href="https://doi.org/10.1093/schbul/sbaf029" target="_blank">doi.org/10.1093/schbul/sbaf029 →</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2024</span>
+      <div class="pub-content">
+        <h4>Speech Markers of Depression Dimensions Across Cognitive Status</h4>
+        <div class="authors">Soleimani L, Ouyang Y, Cho S, Kia A, Beeri MS, et al.</div>
+        <div class="venue">Alzheimer's &amp; Dementia: Diagnosis, Assessment &amp; Disease Monitoring, 16(3)</div>
+        <a href="https://doi.org/10.1002/dad2.12604" target="_blank">doi.org/10.1002/dad2.12604 →</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2023</span>
+      <div class="pub-content">
+        <h4>Conceptor-Aided Debiasing of Large Language Models</h4>
+        <div class="authors">Yifei L, Ungar L, Sedoc J</div>
+        <div class="venue">Proceedings of EMNLP 2023, 10703–10727</div>
+        <a href="https://doi.org/10.18653/v1/2023.emnlp-main.661" target="_blank">doi.org/10.18653/v1/2023.emnlp-main.661 →</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2021</span>
+      <div class="pub-content">
+        <h4>Natural Language Processing Methods Are Sensitive to Sub-Clinical Linguistic Differences in Schizophrenia Spectrum Disorders</h4>
+        <div class="authors">Tang SX, Kriz R, Cho S, Park SJ, Harowitz J, Gur RE, Bhati MT, Wolf DH, Sedoc J, Liberman MY</div>
+        <div class="venue">npj Schizophrenia, 7(1), 25</div>
+        <a href="https://doi.org/10.1038/s41537-021-00154-3" target="_blank">doi.org/10.1038/s41537-021-00154-3 →</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2024</span>
+      <div class="pub-content">
+        <h4>Key Language Markers of Depression on Social Media Depend on Race</h4>
+        <div class="authors">Rai S, Stade EC, Giorgi S, Francisco A, Ungar LH, Curtis B, Guntuku SC</div>
+        <div class="venue">Proceedings of the National Academy of Sciences, 121(14), e2319837121</div>
+        <a href="https://doi.org/10.1073/pnas.2319837121" target="_blank">doi.org/10.1073/pnas.2319837121 →</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2015</span>
+      <div class="pub-content">
+        <h4>The Philadelphia Neurodevelopmental Cohort: Constructing a Deep Phenotyping Collaborative</h4>
+        <div class="authors">Calkins ME, Merikangas KR, Moore TM, Burstein M, Behr MA, Satterthwaite TD, et al.</div>
+        <div class="venue">Journal of Child Psychology and Psychiatry, 56(12), 1356–1369</div>
+        <a href="https://doi.org/10.1111/jcpp.12416" target="_blank">doi.org/10.1111/jcpp.12416 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><hr></div>
+
+<!-- POSITIONS -->
+<section id="positions">
+  <div class="positions-section">
+    <span class="section-label">Join Us</span>
+    <h2>Open Positions</h2>
+    <p>We're hiring across both sites. STELLAR is a two-year project spanning NLP, speech processing, clinical psychiatry, and human-centered AI. We're looking for people who are excited about building tools that make mental health training more equitable and scalable.</p>
+
+    <div class="position-cards">
+      <div class="position-card">
+        <h4>Postdoctoral Researcher — NLP &amp; Steering Vectors</h4>
+        <div class="loc">NYU or Penn</div>
+        <p>Develop and validate Conceptor-based steering methods for LLMs. Strong background in representation learning, mechanistic interpretability, or activation engineering. Experience with clinical NLP a plus.</p>
+      </div>
+      <div class="position-card">
+        <h4>Research Scientist — Speech &amp; Multimodal AI</h4>
+        <div class="loc">Penn / Linguistic Data Consortium</div>
+        <p>Work on acoustic biomarker extraction, speaker diarization, and multimodal Conceptor integration from clinical interview recordings. Experience with wav2vec, Whisper, or clinical speech analysis preferred.</p>
+      </div>
+      <div class="position-card">
+        <h4>Research Engineer — Platform Development</h4>
+        <div class="loc">NYU or Penn</div>
+        <p>Build the digital twin training platform — integrating Conceptor-steered LLMs with avatar rendering (SoulMachines), session recording, and automated feedback systems. Full-stack experience with ML deployment.</p>
+      </div>
+      <div class="position-card">
+        <h4>Research Coordinator — Clinical Evaluation</h4>
+        <div class="loc">University of Pennsylvania</div>
+        <p>Coordinate stakeholder surveys, focus groups, and the trainee-tool-trainer implementation readiness study. Experience with IRB protocols, mixed-methods research, and mental health populations.</p>
+      </div>
+    </div>
+
+    <p class="contact-line">
+      Interested? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeprJNrPf-NSrZi_kEgfqxyXkStOMPH1SY0_OnMXdvTv868uQ/viewform?usp=header" target="_blank">Fill out this brief interest form</a> with your CV and a note on what draws you to this work. We'll be in touch.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    STELLAR Project · Funded by the Wellcome Trust · 2026–2028
+  </div>
+  <div class="footer-right">
+    <a href="https://www.nyu.edu" target="_blank">NYU</a>
+    <a href="https://www.upenn.edu" target="_blank">Penn</a>
+    <a href="https://www.ldc.upenn.edu" target="_blank">LDC</a>
+    <a href="https://wellcome.org" target="_blank">Wellcome Trust</a>
+  </div>
+</footer>
+
+</body>
+</html>
