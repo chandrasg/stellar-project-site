@@ -1,0 +1,122 @@
+[
+  {
+    "name": "João Sedoc",
+    "role": "Lead PI",
+    "role_detail": null,
+    "institution": "New York University",
+    "department": "Department of Technology, Operations, and Statistics",
+    "bio": "ML researcher with expertise in Conceptor methods for bias mitigation and conversational AI in healthcare. Leads overall project coordination and Conceptor-based steering vector development.",
+    "photo_url": "https://www.stern.nyu.edu/sites/default/files/styles/480w_x_543h/public/media/jsedoc.png",
+    "website_url": "https://www.stern.nyu.edu/faculty/bio/joao-sedoc",
+    "scholar_url": "https://scholar.google.com/citations?user=vv355NgAAAAJ",
+    "order": 1
+  },
+  {
+    "name": "Neville Ryant",
+    "role": "Lead PI",
+    "role_detail": "UPenn & LDC",
+    "institution": "Linguistic Data Consortium",
+    "department": null,
+    "bio": "Leads all LDC annotation and assessment — manual transcription, human preference judgments, digital twin evaluation, and quality control across speech and language data.",
+    "photo_url": null,
+    "website_url": "https://www.ldc.upenn.edu/staff/neville-ryant",
+    "scholar_url": "https://scholar.google.com/citations?user=bckldv8AAAAJ",
+    "order": 2
+  },
+  {
+    "name": "Raquel Gur",
+    "role": "Local PI",
+    "role_detail": "Penn Medicine",
+    "institution": "University of Pennsylvania",
+    "department": "Department of Psychiatry",
+    "bio": "Founder of the Philadelphia Neurodevelopmental Cohort. Provides psychiatric expertise in symptom presentation and maintains connections with lived experience communities.",
+    "photo_url": "https://www.med.upenn.edu/bbl/assets/user-content/images/faculty/Raquel1013.jpg",
+    "website_url": "https://www.med.upenn.edu/bbl/faculty-regur.html",
+    "scholar_url": "https://scholar.google.com/citations?user=1GQSnmwAAAAJ",
+    "order": 3
+  },
+  {
+    "name": "Sharath Chandra Guntuku",
+    "role": "Local PI",
+    "role_detail": "Penn Engineering",
+    "institution": "University of Pennsylvania",
+    "department": "Department of Computer and Information Science",
+    "bio": "Directs the Computational Social Listening Lab. Leads integration of behavioral and social media-derived patterns into Conceptor development, clinical validation, and technical infrastructure.",
+    "photo_url": "https://directory.seas.upenn.edu/wp-content/uploads/2020/05/guntuku-sharath-chandra.jpg",
+    "website_url": "https://sharathg.cis.upenn.edu/",
+    "scholar_url": "https://scholar.google.com/citations?user=76_hrfUAAAAJ",
+    "order": 4
+  },
+  {
+    "name": "Monica Calkins",
+    "role": "Co-Investigator",
+    "role_detail": null,
+    "institution": "University of Pennsylvania",
+    "department": "Department of Psychiatry",
+    "bio": "Expert in research program management, psychiatric assessment, and the PNC clinical dataset. Co-implements the Lived Experience Integration Team and leads stakeholder surveys and focus groups.",
+    "photo_url": "https://www.med.upenn.edu/bbl/assets/user-content/uploads/monicacalkins2018912x1140.jpg",
+    "website_url": "https://www.med.upenn.edu/bbl/faculty-mcalkins.html",
+    "scholar_url": "https://scholar.google.com/citations?user=6RizSS8AAAAJ",
+    "order": 5
+  },
+  {
+    "name": "Tyler Moore",
+    "role": "Co-Investigator",
+    "role_detail": null,
+    "institution": "University of Pennsylvania",
+    "department": "Department of Psychiatry",
+    "bio": "Quantitative methodology expert. Establishes psychometric benchmarks for clinical fidelity, develops validation protocols, and optimizes Conceptor composition for realistic multi-dimensional presentations.",
+    "photo_url": "https://www.med.upenn.edu/bbl/assets/user-content/uploads/tylerheadshot150x200.png",
+    "website_url": "https://www.med.upenn.edu/bbl/staff-mmoore.html",
+    "scholar_url": "https://scholar.google.com/citations?user=TlO7ZTsAAAAJ",
+    "order": 6
+  },
+  {
+    "name": "Sunghye Cho",
+    "role": "Co-Investigator",
+    "role_detail": null,
+    "institution": "Linguistic Data Consortium",
+    "department": null,
+    "bio": "Extracts speech-based digital biomarkers from clinical interview recordings and validates ASR outputs. Leads acoustic-linguistic integration for multimodal Conceptor development.",
+    "photo_url": null,
+    "website_url": "https://www.sunghyecho.com/",
+    "scholar_url": "https://scholar.google.com/citations?user=qBlTqlwAAAAJ",
+    "order": 7
+  },
+  {
+    "name": "Rachel Gordon",
+    "role": "Lived Experience",
+    "role_detail": null,
+    "institution": "Filmmaker & Data Scientist",
+    "department": null,
+    "bio": "Black filmmaker and former data scientist whose work centers stigma, race, motherhood, and mental health. Co-chairs the Lived Experience Integration Team, bringing deep expertise on barriers to care.",
+    "photo_url": null,
+    "website_url": "https://www.rachelhg.com/",
+    "scholar_url": null,
+    "order": 8
+  },
+  {
+    "name": "Mark Liberman",
+    "role": "Collaborator",
+    "role_detail": null,
+    "institution": "University of Pennsylvania",
+    "department": "Department of Linguistics",
+    "bio": "Christopher H. Browne Distinguished Professor of Linguistics and founding director of the Linguistic Data Consortium. Research spans phonetics, speech technology, and computational linguistics.",
+    "photo_url": null,
+    "website_url": "https://www.ling.upenn.edu/~myl/",
+    "scholar_url": "https://scholar.google.com/citations?user=R--JjPoAAAAJ",
+    "order": 9
+  },
+  {
+    "name": "Ruben Gur",
+    "role": "Collaborator",
+    "role_detail": null,
+    "institution": "University of Pennsylvania",
+    "department": "Department of Psychiatry",
+    "bio": "Director of the Brain Behavior Laboratory and Center for Neuroimaging in Psychiatry. Developed the computerized neurocognitive battery used in the PNC and deep phenotyping tools deployed worldwide.",
+    "photo_url": "https://www.med.upenn.edu/bbl/assets/user-content/images/faculty/Ruben_Gur1.jpg",
+    "website_url": "https://www.med.upenn.edu/bbl/faculty-rcgur.html",
+    "scholar_url": "https://scholar.google.com/citations?user=s0c4v8MAAAAJ",
+    "order": 10
+  }
+]

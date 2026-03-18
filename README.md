@@ -2,49 +2,116 @@
 
 **Steering-Vector Enhanced LLM Agents for Realistic Digital Twins in Mental Health**
 
-A Wellcome Trust-funded collaboration between NYU, University of Pennsylvania, and the Linguistic Data Consortium.
+A [Wellcome Trust](https://wellcome.org)-funded collaboration between NYU, University of Pennsylvania, and the Linguistic Data Consortium.
 
-## Live site
+## Quick Start
 
-Once deployed, the site will be available at:
-`https://<your-github-username>.github.io/stellar-project-site/`
+```bash
+# Clone and serve locally
+git clone https://github.com/YOUR_ORG/stellar-project-site.git
+cd stellar-project-site
+npx serve src/
+# Open http://localhost:3000
+```
+
+## How Content Works
+
+All site content lives in `/data/` as JSON files. The site reads from these — **never edit HTML to change content**. This means anyone on the team can update the site by editing a JSON file and pushing.
+
+| File | What it controls |
+|------|-----------------|
+| `data/team.json` | Team members, roles, bios, photos, links |
+| `data/publications.json` | Selected publications with DOIs |
+| `data/positions.json` | Open positions and descriptions |
+| `data/project.json` | Project description, aims, funder info |
+
+## For Collaborators: Editing Content
+
+### Update a team member's bio
+1. Open `data/team.json`
+2. Find the person by name
+3. Edit the `bio` field
+4. Commit and push — site rebuilds automatically
+
+### Add a publication
+1. Open `data/publications.json`
+2. Add a new entry following the existing schema (title, authors, venue, year, doi)
+3. Commit and push
+
+### Update open positions
+1. Open `data/positions.json`
+2. Edit, add, or remove entries
+3. Update `active: false` to hide a filled position without deleting it
 
 ## Deployment
 
-This is a single-page static site — no build step required. It runs directly on GitHub Pages.
+### GitHub Pages (Production)
+1. Push to `main` branch
+2. Settings → Pages → Deploy from branch → `main` / root
+3. Live at `https://YOUR_ORG.github.io/stellar-project-site/`
 
-### Setup
+### Vercel (Staging)
+Connected to the repo. Every PR gets a preview URL automatically.
 
-1. Push this repo to GitHub
-2. Go to **Settings → Pages**
-3. Under "Source", select **Deploy from a branch**
-4. Choose `main` branch, root `/`
-5. Save — the site will be live in ~1 minute
-
-### Custom domain (optional)
-
-To use a custom domain (e.g., `stellar-project.org`):
-
-1. Add a `CNAME` file containing just the domain name
-2. Configure DNS with your registrar (CNAME → `<username>.github.io`)
+### Custom Domain
+1. Add domain to `CNAME` file
+2. Configure DNS: CNAME record → `YOUR_ORG.github.io`
 3. Enable HTTPS in GitHub Pages settings
 
-## Editing
+## Building with the Agent Pipeline
 
-The entire site is in `index.html`. Key sections to update:
+If you're using Claude Code with the agent pipeline:
 
-- **Team**: Search for `team-grid` — each person is a `team-card` div
-- **Publications**: Search for `pub-list` — each paper is a `pub-item` div
-- **Open positions**: Search for `position-cards` — each role is a `position-card` div
-- **Google Form link**: Search for `forms.gle/PLACEHOLDER` and replace with your actual form URL
+```bash
+# Run the full pipeline
+cc "Build the STELLAR site using /agents/ pipeline"
+
+# Run a single agent
+cc "Run the SEO review agent on the current site"
+
+# Update data only
+cc "Research agent: update publications from Semantic Scholar for all team members"
+```
+
+See `/agents/README.md` for full pipeline documentation.
+
+## Project Structure
+
+```
+├── CLAUDE.md              # Global Claude Code instructions
+├── README.md              # This file
+├── .nojekyll              # GitHub Pages config
+├── agents/                # Agent pipeline instructions
+│   ├── README.md          # Orchestration docs
+│   ├── 01-research.md     # Data gathering
+│   ├── 02-design.md       # Design system
+│   ├── 03-develop.md      # Build
+│   ├── 04-review-design.md
+│   ├── 05-review-content.md
+│   ├── 06-review-seo.md
+│   └── 07-review-visual.md
+├── data/                  # Content (source of truth)
+│   ├── README.md          # JSON schemas
+│   ├── project.json
+│   ├── team.json
+│   ├── publications.json
+│   └── positions.json
+├── src/                   # Site source
+│   ├── README.md          # Component architecture
+│   └── index.html
+└── assets/                # Static files
+    ├── README.md          # Image specs
+    └── images/
+```
 
 ## TODO
-
-- [ ] Replace `https://forms.gle/PLACEHOLDER` with actual Google Form URL
-- [ ] Confirm team bios with all investigators
-- [ ] Add team photos (optional — would require adding `<img>` tags to team cards)
-- [ ] Add Wellcome Trust logo if permitted
-- [ ] Set up custom domain if desired
+- [ ] Replace Google Form placeholder URL in `data/positions.json`
+- [ ] Collect and add team headshots
+- [ ] Verify all publication DOIs
+- [ ] Add Wellcome Trust logo (pending brand approval)
+- [ ] Set up custom domain
+- [ ] Add Open Graph / Twitter card meta tags
+- [ ] Add schema.org structured data
 
 ## License
 

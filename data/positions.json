@@ -1,0 +1,73 @@
+{
+  "application_url": "https://forms.gle/PLACEHOLDER",
+  "positions": [
+    {
+      "title": "Postdoctoral Researcher — NLP & Steering Vectors",
+      "location": "NYU or Penn",
+      "description": "Develop and validate Conceptor-based steering methods for LLMs. Strong background in representation learning, mechanistic interpretability, or activation engineering. Experience with clinical NLP a plus.",
+      "required_skills": [
+        "PhD in NLP, ML, or related field",
+        "Experience with LLM internals (activations, representations)",
+        "Strong Python and PyTorch"
+      ],
+      "preferred_skills": [
+        "Clinical NLP experience",
+        "Familiarity with steering vectors or activation engineering",
+        "Experience with open-weight LLMs (Llama, Gemma)"
+      ],
+      "active": true,
+      "confidence": "inferred"
+    },
+    {
+      "title": "Research Scientist — Speech & Multimodal AI",
+      "location": "Penn / Linguistic Data Consortium",
+      "description": "Work on acoustic biomarker extraction, speaker diarization, and multimodal Conceptor integration from clinical interview recordings. Experience with wav2vec, Whisper, or clinical speech analysis preferred.",
+      "required_skills": [
+        "MS or PhD in speech processing, signal processing, or related",
+        "Experience with ASR and speaker diarization systems",
+        "Familiarity with speech representation models"
+      ],
+      "preferred_skills": [
+        "Clinical speech analysis experience",
+        "Experience with wav2vec 2.0 or Whisper fine-tuning",
+        "Background in mental health or clinical data"
+      ],
+      "active": true,
+      "confidence": "inferred"
+    },
+    {
+      "title": "Research Engineer — Platform Development",
+      "location": "NYU or Penn",
+      "description": "Build the digital twin training platform — integrating Conceptor-steered LLMs with avatar rendering (SoulMachines), session recording, and automated feedback systems. Full-stack experience with ML deployment.",
+      "required_skills": [
+        "Full-stack development experience",
+        "Experience deploying ML models in production",
+        "Familiarity with real-time communication systems"
+      ],
+      "preferred_skills": [
+        "Experience with avatar/virtual agent platforms",
+        "WebRTC or real-time audio/video streaming",
+        "Healthcare or clinical tool development"
+      ],
+      "active": true,
+      "confidence": "inferred"
+    },
+    {
+      "title": "Research Coordinator — Clinical Evaluation",
+      "location": "University of Pennsylvania",
+      "description": "Coordinate stakeholder surveys, focus groups, and the trainee-tool-trainer implementation readiness study. Experience with IRB protocols, mixed-methods research, and mental health populations.",
+      "required_skills": [
+        "BA/BS in psychology, public health, or related field",
+        "Experience with IRB protocols and human subjects research",
+        "Strong organizational and communication skills"
+      ],
+      "preferred_skills": [
+        "Mixed-methods research experience",
+        "Experience working with mental health populations",
+        "Familiarity with REDCap or similar data collection platforms"
+      ],
+      "active": true,
+      "confidence": "inferred"
+    }
+  ]
+}

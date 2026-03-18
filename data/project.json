@@ -1,0 +1,33 @@
+{
+  "title": "Digital Twins for Mental Health Clinician Training",
+  "acronym": "STELLAR",
+  "acronym_expansion": "Steering-Vector Enhanced LLM Agents for Realistic Digital Twins in Mental Health",
+  "funder": "Wellcome Trust",
+  "funder_url": "https://wellcome.org",
+  "funder_program": null,
+  "duration": "2026–2028",
+  "summary": "AI-powered patient simulations using large language models enhanced with Conceptors — advanced steering vectors enabling precise control over psychiatric symptom presentations — for scalable, equitable clinician training worldwide.",
+  "institutions": [
+    "New York University",
+    "University of Pennsylvania",
+    "Linguistic Data Consortium"
+  ],
+  "aims": {
+    "primary": "Develop and validate STELLAR, a system for training mental health clinicians through realistic, controllable digital patient twins using LLMs enhanced with Conceptors.",
+    "secondary": "Use Conceptors to perform robustness analysis of diagnostic tools for depression, anxiety, and psychosis — testing demographic invariance and identifying bias.",
+    "exploratory": "Evaluate whether fine-tuning multi-speaker TTS models on clinical interview audio improves digital twin voice authenticity."
+  },
+  "keywords": [
+    "digital twins",
+    "mental health",
+    "clinician training",
+    "large language models",
+    "conceptors",
+    "steering vectors",
+    "psychiatric simulation",
+    "health equity",
+    "algorithmic fairness",
+    "NLP",
+    "Philadelphia Neurodevelopmental Cohort"
+  ]
+}

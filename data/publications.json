@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Unique Signatures in Verbal Fluency Task Performance in Schizophrenia and Depression",
+    "authors": "Cho S, Cong Y, Mehta A, et al.",
+    "venue": "Schizophrenia Research: Cognition, 43, 100407",
+    "year": 2025,
+    "doi": "10.1016/j.scog.2025.100407",
+    "doi_url": "https://doi.org/10.1016/j.scog.2025.100407",
+    "abstract_short": "Identifies distinct verbal fluency signatures in schizophrenia versus depression using automated speech analysis, demonstrating that computational acoustic and lexical measures can differentiate psychiatric conditions."
+  },
+  {
+    "title": "The Philadelphia Neurodevelopmental Cohort: Perspective, Lessons, and Future Directions",
+    "authors": "Gur RE, Calkins ME, Gur RC",
+    "venue": "Schizophrenia Bulletin, 51(4), 852–857",
+    "year": 2025,
+    "doi": "10.1093/schbul/sbaf029",
+    "doi_url": "https://doi.org/10.1093/schbul/sbaf029",
+    "abstract_short": "Reflects on the PNC's contributions to understanding neurodevelopment and psychopathology, lessons learned from deep phenotyping of ~10,000 youth, and future directions for the cohort."
+  },
+  {
+    "title": "Large Language Models Could Change the Future of Behavioral Healthcare: A Proposal for Responsible Development and Evaluation",
+    "authors": "Stade EC, Stirman SW, Ungar LH, et al.",
+    "venue": "npj Mental Health Research, 3(1), 12",
+    "year": 2024,
+    "doi": "10.1038/s44184-024-00056-z",
+    "doi_url": "https://doi.org/10.1038/s44184-024-00056-z",
+    "abstract_short": "Proposes a framework for responsibly developing and evaluating LLMs in psychotherapy and behavioral health contexts, addressing safety, efficacy, and equity concerns specific to clinical applications."
+  },
+  {
+    "title": "Key Language Markers of Depression on Social Media Depend on Race",
+    "authors": "Rai S, Stade EC, Giorgi S, et al.",
+    "venue": "Proceedings of the National Academy of Sciences, 121(14), e2319837121",
+    "year": 2024,
+    "doi": "10.1073/pnas.2319837121",
+    "doi_url": "https://doi.org/10.1073/pnas.2319837121",
+    "abstract_short": "Examines how race moderates the relationship between language features from social media and self-reported depression, revealing that key markers such as first-person pronoun usage predict depression in White but not Black individuals."
+  },
+  {
+    "title": "Speech Markers of Depression Dimensions Across Cognitive Status",
+    "authors": "Soleimani L, Ouyang Y, Cho S, et al.",
+    "venue": "Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring, 16(3)",
+    "year": 2024,
+    "doi": "10.1002/dad2.12604",
+    "doi_url": "https://doi.org/10.1002/dad2.12604",
+    "abstract_short": "Identifies speech-based markers of depression dimensions that vary across cognitive status, demonstrating the diagnostic potential of acoustic and lexical features for differentiating apathy from dysphoria."
+  },
+  {
+    "title": "An Integrative Survey on Mental Health Conversational Agents to Bridge Computer Science and Medical Perspectives",
+    "authors": "Cho Y, Rai S, Ungar L, Sedoc J, Guntuku SC",
+    "venue": "Proceedings of EMNLP 2023, 11346–11369",
+    "year": 2023,
+    "doi": "10.18653/v1/2023.emnlp-main.698",
+    "doi_url": "https://doi.org/10.18653/v1/2023.emnlp-main.698",
+    "abstract_short": "Comprehensive PRISMA-based review of 534 papers on chatbots designed for mental health support, bridging computer science and clinical perspectives and mapping technical approaches against therapeutic goals."
+  },
+  {
+    "title": "Conceptor-Aided Debiasing of Large Language Models",
+    "authors": "Li Y, Ungar L, Sedoc J",
+    "venue": "Proceedings of EMNLP 2023, 10703–10727",
+    "year": 2023,
+    "doi": "10.18653/v1/2023.emnlp-main.661",
+    "doi_url": "https://doi.org/10.18653/v1/2023.emnlp-main.661",
+    "abstract_short": "Applies Conceptors as a mathematical framework for bias mitigation in large language models, demonstrating precise, geometry-based control over internal representations without retraining."
+  },
+  {
+    "title": "The Third DIHARD Diarization Challenge",
+    "authors": "Ryant N, Singh P, Krishnamohan V, et al.",
+    "venue": "Proceedings of Interspeech 2021, 3570–3574",
+    "year": 2021,
+    "doi": "10.21437/interspeech.2021-1208",
+    "doi_url": "https://doi.org/10.21437/interspeech.2021-1208",
+    "abstract_short": "Describes the third DIHARD speaker diarization challenge, evaluating 499 system submissions from 30 organizations across diverse recording conditions including clinical and naturalistic speech environments."
+  },
+  {
+    "title": "Natural Language Processing Methods Are Sensitive to Sub-Clinical Linguistic Differences in Schizophrenia Spectrum Disorders",
+    "authors": "Tang SX, Kriz R, Cho S, et al.",
+    "venue": "npj Schizophrenia, 7(1), 25",
+    "year": 2021,
+    "doi": "10.1038/s41537-021-00154-3",
+    "doi_url": "https://doi.org/10.1038/s41537-021-00154-3",
+    "abstract_short": "Shows that NLP methods detect subtle linguistic differences in schizophrenia spectrum disorders even at sub-clinical levels, linking automated coherence measures to established clinical symptom ratings."
+  },
+  {
+    "title": "Burden of Environmental Adversity Associated With Psychopathology, Maturation, and Brain Behavior Parameters in Youths",
+    "authors": "Gur RE, Moore TM, Rosen AFG, et al.",
+    "venue": "JAMA Psychiatry, 76(9), 966",
+    "year": 2019,
+    "doi": "10.1001/jamapsychiatry.2019.0943",
+    "doi_url": "https://doi.org/10.1001/jamapsychiatry.2019.0943",
+    "abstract_short": "Using PNC data, demonstrates that low socioeconomic status and traumatic stress exposures are jointly associated with psychopathology, neurocognition, and brain structure in youth, with implications for equity in mental health research."
+  },
+  {
+    "title": "The Second DIHARD Diarization Challenge: Dataset, Task, and Baselines",
+    "authors": "Ryant N, Church K, Cieri C, et al.",
+    "venue": "Proceedings of Interspeech 2019, 978–982",
+    "year": 2019,
+    "doi": "10.21437/interspeech.2019-1268",
+    "doi_url": "https://doi.org/10.21437/interspeech.2019-1268",
+    "abstract_short": "Introduces the second DIHARD challenge dataset and baselines for speaker diarization in difficult acoustic conditions, establishing benchmarks for real-world multi-speaker speech processing including clinical settings."
+  },
+  {
+    "title": "The Philadelphia Neurodevelopmental Cohort: Constructing a Deep Phenotyping Collaborative",
+    "authors": "Calkins ME, Merikangas KR, Moore TM, et al.",
+    "venue": "Journal of Child Psychology and Psychiatry, 56(12), 1356–1369",
+    "year": 2015,
+    "doi": "10.1111/jcpp.12416",
+    "doi_url": "https://doi.org/10.1111/jcpp.12416",
+    "abstract_short": "Describes the construction and methodology of the PNC, a community sample of ~10,000 genotyped youth with comprehensive psychiatric, neurocognitive, and neuroimaging assessments forming a foundational dataset for STELLAR."
+  }
+]
