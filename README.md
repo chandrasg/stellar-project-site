@@ -105,13 +105,18 @@ See `/agents/README.md` for full pipeline documentation.
 ```
 
 ## TODO
-- [ ] Replace Google Form placeholder URL in `data/positions.json`
-- [ ] Collect and add team headshots
-- [ ] Verify all publication DOIs
-- [ ] Add Wellcome Trust logo (pending brand approval)
-- [ ] Set up custom domain
-- [ ] Add Open Graph / Twitter card meta tags
-- [ ] Add schema.org structured data
+
+**Before going public:**
+- [ ] Replace `YOUR_ORG` in this README with the actual GitHub org/username
+- [ ] Replace Google Form placeholder URL in `data/positions.json` → update `application_url`
+- [ ] Add Wellcome Trust logo to `assets/images/` (pending brand approval from wellcome.org/brand)
+- [ ] Set up custom domain — add `CNAME` file, configure DNS
+
+**Already done:**
+- [x] Team headshots — 6 of 10 members have verified photo URLs in `data/team.json`
+- [x] Publication DOIs verified via Semantic Scholar and OpenAlex (12 papers)
+- [x] Open Graph and Twitter Card meta tags
+- [x] schema.org JSON-LD structured data (ResearchProject, ScholarlyArticle, JobPosting)
 
 ## License
 
