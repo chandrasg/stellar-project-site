@@ -8,7 +8,7 @@ A [Wellcome Trust](https://wellcome.org)-funded collaboration between NYU, Unive
 
 ```bash
 # Clone and serve locally
-git clone https://github.com/YOUR_ORG/stellar-project-site.git
+git clone https://github.com/chandrasg/stellar-project-site.git
 cd stellar-project-site
 npx serve src/
 # Open http://localhost:3000
