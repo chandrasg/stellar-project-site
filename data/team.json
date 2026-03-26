@@ -118,5 +118,17 @@
     "website_url": "https://www.med.upenn.edu/bbl/faculty-rcgur.html",
     "scholar_url": "https://scholar.google.com/citations?user=s0c4v8MAAAAJ",
     "order": 10
+  },
+  {
+    "name": "Dominic A. Sisti",
+    "role": "Collaborator",
+    "role_detail": null,
+    "institution": "University of Pennsylvania",
+    "department": "Department of Medical Ethics & Health Policy",
+    "bio": "Directs the Scattergood Program for the Applied Ethics of Behavioral Health Care at Penn Medicine. Brings expertise in the ethics of mental health care, psychiatric classification, and equitable access to care — guiding the ethical framework for STELLAR's clinical deployment.",
+    "photo_url": "https://medicalethicshealthpolicy.med.upenn.edu/uploads/attachments/clwqjxzomdxfzm9lenidmk0jd-sisti-dominic-lo-res.31.0.739.723.full.jpg",
+    "website_url": "https://medicalethicshealthpolicy.med.upenn.edu/faculty-all/dominic-sisti",
+    "scholar_url": "https://scholar.google.com/citations?user=tLF81pkAAAAJ",
+    "order": 11
   }
 ]
