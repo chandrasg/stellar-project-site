@@ -1,5 +1,14 @@
 [
   {
+    "title": "Conceptors for Semantic Steering",
+    "authors": "Triantafyllopoulos I, Cho YM, Tao R, et al.",
+    "venue": "arXiv preprint, arXiv:2605.04980",
+    "year": 2026,
+    "doi": "10.48550/arXiv.2605.04980",
+    "doi_url": "https://doi.org/10.48550/arXiv.2605.04980",
+    "abstract_short": "Proposes conceptors—soft projection matrices derived from activations across both poles of bipolar concepts—as a steering method for LLMs, offering geometric advantages over single-direction approaches, parameter-free layer selection, Boolean algebra composition, and fewer degenerate outputs."
+  },
+  {
     "title": "Unique Signatures in Verbal Fluency Task Performance in Schizophrenia and Depression",
     "authors": "Cho S, Cong Y, Mehta A, et al.",
     "venue": "Schizophrenia Research: Cognition, 43, 100407",
