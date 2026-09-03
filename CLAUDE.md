@@ -1,7 +1,7 @@
 # STELLAR Project Site
 
 ## What This Is
-Website for a Wellcome Trust-funded research project: STELLAR (Steering-Vector Enhanced LLM Agents for Realistic Digital Twins in Mental Health). Multi-institutional collaboration between NYU, University of Pennsylvania, and the Linguistic Data Consortium.
+Website for a Wellcome Trust-funded research project: STELLAR (Steering-Vector Enhanced LLM Agents for Realistic Patient Symptom Simulations in Mental Health). Multi-institutional collaboration between NYU, University of Pennsylvania, and the Linguistic Data Consortium.
 
 The site serves three audiences:
 1. **Potential hires** — postdocs, research scientists, engineers, coordinators

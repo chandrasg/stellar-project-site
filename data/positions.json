@@ -38,7 +38,7 @@
     {
       "title": "Research Engineer — Platform Development",
       "location": "NYU or Penn",
-      "description": "Build the digital twin training platform — integrating Conceptor-steered LLMs with avatar rendering (SoulMachines), session recording, and automated feedback systems. Full-stack experience with ML deployment.",
+      "description": "Build the patient symptom simulation training platform — integrating Conceptor-steered LLMs with avatar rendering (SoulMachines), session recording, and automated feedback systems. Full-stack experience with ML deployment.",
       "required_skills": [
         "Full-stack development experience",
         "Experience deploying ML models in production",

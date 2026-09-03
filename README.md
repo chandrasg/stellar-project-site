@@ -1,6 +1,6 @@
 # STELLAR Project Website
 
-**Steering-Vector Enhanced LLM Agents for Realistic Digital Twins in Mental Health**
+**Steering-Vector Enhanced LLM Agents for Realistic Patient Symptom Simulations in Mental Health**
 
 A [Wellcome Trust](https://wellcome.org)-funded collaboration between NYU, University of Pennsylvania, and the Linguistic Data Consortium.
 

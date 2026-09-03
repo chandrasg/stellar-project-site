@@ -64,7 +64,7 @@ Recommended: inline the data. It's simpler and more reliable for a single-page s
 ### Meta Tags & SEO
 Include in `<head>`:
 ```html
-<title>STELLAR — Digital Twins for Mental Health Clinician Training</title>
+<title>STELLAR — AI-Powered Patient Symptom Simulations for Mental Health Clinician Training</title>
 <meta name="description" content="...">
 <meta name="keywords" content="...">
 
